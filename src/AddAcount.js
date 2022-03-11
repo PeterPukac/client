@@ -4,17 +4,26 @@ function AddAcount() {
   const [name, setName] = useState(' ');
   const [password, setPassword] = useState(' ');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const id = 3;
     const customer = { name, password, id };
-    fetch("/accounts", {
+    /*fetch("/accounts", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(customer)
     }).then(() => {
       console.log("new customer added.");
-    })
+    })*/
+
+    const options ={
+      method:"POST",
+      headers: { "Content-Type": "application/json" },
+      body:JSON.stringify(customer)
+    }
+    fetch("/accounts",options);
+
+
   }
 
   return (
