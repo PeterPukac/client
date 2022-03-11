@@ -1,34 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from './Navbar';
 function AddAcount() {
   const [name, setName] = useState(' ');
   const [password, setPassword] = useState(' ');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const id = 3;
-    const customer = { name, password, id };
-    /*fetch("/accounts", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(customer)
-    }).then(() => {
-      console.log("new customer added.");
-    })*/
-
+    const customer = { name, password};
     const options ={
       method:"POST",
       headers: { "Content-Type": "application/json" },
       body:JSON.stringify(customer)
-    }
+    };
     fetch("/accounts",options);
-
-
   }
 
   return (
     <div className="AddAcount">
-      <Navbar />
       <div className="container loginWrap">
         <div className="row">
           <div className="col-12 col-sm-12 col-md-4 col-lg-4"></div>
