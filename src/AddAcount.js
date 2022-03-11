@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 function AddAcount() {
   const [name, setName] = useState(' ');
   const [password, setPassword] = useState(' ');
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const customer = { name, password};
-    const options ={
-      method:"POST",
+    const customer = { name, password };
+    const options = {
+      method: "POST",
       headers: { "Content-Type": "application/json" },
-      body:JSON.stringify(customer)
+      body: JSON.stringify(customer)
     };
-    fetch("/accounts",options);
+    fetch("/accounts", options);
   }
 
   return (
@@ -22,14 +23,14 @@ function AddAcount() {
           <div className="col-12 col-sm-12 col-md-4 col-lg-4">
             <main className="form-signin">
               <form onSubmit={handleSubmit}>
-                <h1 className="h3 mb-3 fw-normal">Pridajte konto</h1>
+                <h1 className="h3 mb-3 fw-normal">Pridajte login</h1>
 
                 <div className="form-floating">
-                  <input type="text" className="form-control" onChange={(e) => setName(e.target.value)} />
+                  <input type="text" autoComplete="on" className="form-control" onChange={(e) => setName(e.target.value)} />
                   <label>Prihlasovacie meno</label>
                 </div>
                 <div className="form-floating">
-                  <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} />
+                  <input type="password" autoComplete="on" className="form-control" onChange={(e) => setPassword(e.target.value)} />
                   <label>Heslo</label>
                 </div>
 
