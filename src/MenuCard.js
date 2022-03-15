@@ -1,20 +1,24 @@
-const ManuCard = (props)=> {
+import { motion } from 'framer-motion';
+const MenuCard = (props) => {
     const object = props.object;
-    //nazov, podnadpis,ikona, colorOne,ColorTwo
+    
     return (
-        <div className="App">
-            <div className="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-                <div className="my-3 py-3">
-                    <h2 className="display-5">{object.name}</h2>
-                    <p className="lead">{object.paragraph}</p>
-                </div>
-                <div className="bg-danger shadow-sm mx-auto cards">
-                    {object.icon}
-                </div>
-
-            </div>
-        </div>
+        <motion.div whileHover={{ scale: 1.1}}>
+            <a href={`/list/${object.linkTo}`} >
+                <div className="menuCard" >
+                    <div className="card" style={{ backgroundColor: object.mainColor }} >
+                        <div className="card-body">
+                            <h2 className="display-5 whiteHeading">{object.name}</h2>
+                            <p className="lead whiteHeading">{object.paragraph}</p>
+                        </div>
+                        <div className="mx-auto icon" style={{ backgroundColor: object.secondaryColor }}>
+                            {object.icon}
+                        </div>
+                    </div>
+                </div>  
+                </a>             
+        </motion.div>
     );
 }
 
-export default ManuCard;
+export default MenuCard;

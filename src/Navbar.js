@@ -1,16 +1,33 @@
 const Navbar = () => {
 
   return (
+    <div className="nav">
+      <div className="container-fluid">
+        <div className="row bg-danger">
 
-    <main>
-      <header class="site-header sticky-top py-1">
-        <nav class="container d-flex flex-column flex-md-row justify-content-between">
-          <a class="py-2 d-none d-md-inline-block" href="/list">Loginy</a>
-          <a class="py-2 d-none d-md-inline-block" href="/"><img src="./logo.PNG"></img></a>
-          <a class="py-2 d-none d-md-inline-block" href="#">Prihlásiť sa</a>
-        </nav>
-      </header>
-    </main>
+          <div className="col-12 col-md-12 col-lg-1">
+            <a className="navLink" href="/">Domov</a>
+          </div>
+          <div className="col-12 col-md-12 col-lg-2">
+            <a className="navLink" href="#">Prihlásiť sa</a>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-12 col-md-12 col-lg-12">
+            <div className="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+              <div className="col-md-5 p-lg-5 mx-auto my-5">
+                <h1 className="display-5 fw-normal">Správca hesiel a loginov</h1>
+                <p className=" fw-normal">Táto aplikácia Vám poskytuje prehľad o všetkých prihlasovacích údajoch v našej firme :)</p>
+                <a className="btn btn-outline-secondary" href="/addAccount">Pridať login</a>
+              </div>
+              <div className="product-device shadow-sm d-none d-md-block"></div>
+              <div className="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   );
 }
